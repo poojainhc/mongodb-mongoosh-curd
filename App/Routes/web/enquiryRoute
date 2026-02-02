@@ -1,0 +1,10 @@
+const { getAllEnquiries,enquiryInsert,enquiryDelete,enquiryUpdate } = require('../../Controller/web/enquiryController');
+const express = require('express');
+const enquiryrouter = express.Router();
+
+enquiryrouter.get('/',getAllEnquiries);
+enquiryrouter.post('/enquiry-insert',enquiryInsert);
+enquiryrouter.delete('/enquiry-delete/:id', enquiryDelete );
+enquiryrouter.put('/enquiry-update/:id',enquiryUpdate);
+
+module.exports = enquiryrouter;
